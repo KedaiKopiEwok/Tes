@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,40 +11,59 @@
       background: linear-gradient(to bottom, #8b4b2d, #d9a067);
       color: #fff;
     }
+
     header {
       text-align: center;
       padding: 3rem 1rem;
     }
+
     header img {
       width: 150px;
       border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
+
+    h1, h2 {
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    }
+
     section {
       padding: 2rem 1rem;
       max-width: 1000px;
       margin: auto;
     }
+
     .drinks, .croissants, .buy, .about, .party {
       margin-bottom: 3rem;
     }
+
     .cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
     }
+
     .card {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       padding: 1.5rem;
       width: 250px;
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
     .card img {
       width: 100%;
       border-radius: 10px;
       margin-bottom: 1rem;
     }
+
     .cta-button {
       display: inline-block;
       margin-top: 1rem;
@@ -53,11 +73,26 @@
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
+      transition: background 0.3s;
     }
+
+    .cta-button:hover {
+      background: #ffddaa;
+      color: #000;
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
       background: rgba(0, 0, 0, 0.2);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .cards {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
@@ -65,44 +100,56 @@
   <header>
     <img src="IMG_20250601_183510.jpg" alt="Coffee Cup" />
     <h1>High quality in every cup we serve...</h1>
-  </header>  <section class="drinks">
-    <h2>Drinks</h2>
+  </header>
+
+  <section class="drinks">
+    <h2>☕ Drinks</h2>
     <div class="cards">
       <div class="card">
         <img src="https://i.imgur.com/T5G7O0y.jpg" alt="Cappuccino">
         <h3>Cappuccino</h3>
         <p>$4.20</p>
-        <a href="#" class="cta-button">Get Delivery</a>
+        <a href="https://wa.me/6281234567890" class="cta-button">Get Delivery</a>
       </div>
       <div class="card">
         <img src="https://i.imgur.com/5zOzWTs.jpg" alt="Cafe Latte">
         <h3>Cafe Latte</h3>
         <p>$3.15</p>
-        <a href="#" class="cta-button">Get Delivery</a>
+        <a href="https://wa.me/6281234567890" class="cta-button">Get Delivery</a>
       </div>
       <div class="card">
         <img src="https://i.imgur.com/DMPH0rR.jpg" alt="Dark Coffee">
         <h3>Dark Coffee</h3>
         <p>$2.75</p>
-        <a href="#" class="cta-button">Get Delivery</a>
+        <a href="https://wa.me/6281234567890" class="cta-button">Get Delivery</a>
       </div>
     </div>
-  </section>  <section class="croissants">
-    <h2>Croissants</h2>
-    <p>Duis antic irure quasi — From $2.90</p>
+  </section>
+
+  <section class="croissants">
+    <h2>🥐 Croissants</h2>
+    <p>Flaky, buttery, and dangerously delicious — From $2.90</p>
     <img src="https://i.imgur.com/ctehukN.jpg" alt="Croissant" style="width: 200px; border-radius: 10px; display: block; margin: 1rem auto;">
-  </section>  <section class="buy">
-    <h2>Buy for Home</h2>
-    <p>From $9.90 — Totam rem aperiam</p>
+  </section>
+
+  <section class="buy">
+    <h2>🛍️ Buy for Home</h2>
+    <p>From $9.90 — Bring home the taste of beansville</p>
     <img src="https://i.imgur.com/6uZckZP.png" alt="Coffee Bag" style="width: 250px; border-radius: 10px; display: block; margin: 1rem auto;">
-  </section>  <section class="about">
-    <h2>About</h2>
+  </section>
+
+  <section class="about">
+    <h2>👋 About Us</h2>
     <p>We offer a unique coffee house environment unlike any other in N.Y.<br><br>
-    The perfect place to enjoy your coffee — cozy, clean, and full of aroma.</p>
-  </section>  <section class="party">
-    <h2>Barista Party</h2>
-    <p>Every Friday & Saturday | Special moments, coffee splash, and good vibes.</p>
-  </section>  <footer>
+    Cozy corners. Signature blends. A place where your story and our beans meet.</p>
+  </section>
+
+  <section class="party">
+    <h2>🎉 Barista Party</h2>
+    <p>Every Friday & Saturday | Special moments, coffee splash, and good vibes only ☕🎶✨</p>
+  </section>
+
+  <footer>
     <p>📍 Location: 123 Coffee Street, Beansville, NY</p>
     <p>&copy; 2025 KopiKita. All rights reserved.</p>
   </footer>
