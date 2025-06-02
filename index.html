@@ -157,35 +157,6 @@
             margin: 5px 0;
         }
         
-        .product-actions {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-        }
-        
-        .add-to-cart {
-            background-color: var(--mint);
-            border: none;
-            padding: 8px 15px;
-            border-radius: 15px;
-            cursor: pointer;
-            flex-grow: 1;
-            transition: all 0.3s;
-        }
-        
-        .add-to-cart:hover {
-            background-color: #7cfc7c;
-        }
-        
-        .wishlist {
-            background: none;
-            border: none;
-            font-size: 1.5em;
-            color: #ff6b88;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        
         /* Footer */
         footer {
             background-color: var(--pink);
@@ -292,10 +263,6 @@
                     <div class="product-rating">★★★★☆</div>
                     <p class="product-description">Cupcake warna-warni dengan buttercream lembut</p>
                     <div class="product-price">Rp 35.000 <span class="original">Rp 40.000</span></div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">+ Keranjang</button>
-                        <button class="wishlist">♥</button>
-                    </div>
                 </div>
             </div>
             
@@ -310,10 +277,6 @@
                     <div class="product-rating">★★★★★</div>
                     <p class="product-description">Coklat premium dengan isian strawberry segar</p>
                     <div class="product-price">Rp 80.000 <span class="original">Rp 100.000</span></div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">+ Keranjang</button>
-                        <button class="wishlist">♥</button>
-                    </div>
                 </div>
             </div>
             
@@ -327,10 +290,6 @@
                     <div class="product-rating">★★★☆☆</div>
                     <p class="product-description">Donat warna-warni dengan taburan emas yang bisa dimakan</p>
                     <div class="product-price">Rp 25.000</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">+ Keranjang</button>
-                        <button class="wishlist">♥</button>
-                    </div>
                 </div>
             </div>
             
@@ -344,10 +303,6 @@
                     <div class="product-rating">★★★★☆</div>
                     <p class="product-description">Milkshake vanilla dengan topping marshmallow fluff</p>
                     <div class="product-price">Rp 45.000</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">+ Keranjang</button>
-                        <button class="wishlist">♥</button>
-                    </div>
                 </div>
             </div>
             
@@ -362,10 +317,6 @@
                     <div class="product-rating">★★★★★</div>
                     <p class="product-description">Set macaron 12 rasa dengan kemasan premium</p>
                     <div class="product-price">Rp 150.000</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">+ Keranjang</button>
-                        <button class="wishlist">♥</button>
-                    </div>
                 </div>
             </div>
             
@@ -379,10 +330,6 @@
                     <div class="product-rating">★★★☆☆</div>
                     <p class="product-description">Pancake lucu berbentuk beruang dengan madu organik</p>
                     <div class="product-price">Rp 60.000</div>
-                    <div class="product-actions">
-                        <button class="add-to-cart">+ Keranjang</button>
-                        <button class="wishlist">♥</button>
-                    </div>
                 </div>
             </div>
         </section>
@@ -401,11 +348,6 @@
                     <div class="product-rating" id="modal-rating">★★★★☆</div>
                     <div class="product-price" id="modal-price">Rp 0</div>
                     <p id="modal-description">Deskripsi produk akan muncul di sini.</p>
-                    <div style="margin-top: 20px;">
-                        <label for="quantity">Jumlah:</label>
-                        <input type="number" id="quantity" min="1" value="1" style="width: 60px; margin-left: 10px; padding: 5px; border-radius: 10px; border: 2px solid var(--pink);">
-                    </div>
-                    <button class="add-to-cart" style="margin-top: 20px; width: 100%; padding: 12px;">+ Tambah ke Keranjang</button>
                 </div>
             </div>
         </div>
@@ -425,12 +367,7 @@
             const closeBtn = document.querySelector('.close-btn');
             
             productCards.forEach(card => {
-                card.addEventListener('click', function(e) {
-                    // Jangan buka modal jika mengklik tombol aksi
-                    if (e.target.classList.contains('add-to-cart') || e.target.classList.contains('wishlist')) {
-                        return;
-                    }
-                    
+                card.addEventListener('click', function() {
                     const title = card.querySelector('.product-title').textContent;
                     const price = card.querySelector('.product-price').textContent;
                     const rating = card.querySelector('.product-rating').textContent;
@@ -457,35 +394,6 @@
                 }
             });
             
-            // Animasi tombol wishlist
-            const wishlistBtns = document.querySelectorAll('.wishlist');
-            wishlistBtns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    if (btn.textContent === '♥') {
-                        btn.textContent = '❤️';
-                        btn.style.transform = 'scale(1.2)';
-                        setTimeout(() => {
-                            btn.style.transform = 'scale(1)';
-                        }, 300);
-                    } else {
-                        btn.textContent = '♥';
-                    }
-                });
-            });
-            
-            // Animasi tombol keranjang
-            const addToCartBtns = document.querySelectorAll('.add-to-cart');
-            addToCartBtns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    btn.textContent = 'Ditambahkan!';
-                    setTimeout(() => {
-                        btn.textContent = '+ Keranjang';
-                    }, 1000);
-                });
-            });
-            
             // Fungsi filter sederhana (hanya demo)
             document.getElementById('filter-btn').addEventListener('click', function() {
                 alert('Fitur filter akan bekerja di sini!');
@@ -493,4 +401,4 @@
         });
     </script>
 </body>
-                            </html>
+</html>
