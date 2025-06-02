@@ -1,157 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coffee Landing Page</title>
+  <title>Donut Suka Suka</title>
   <style>
     body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff4f4;
+      color: #333;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #8b4b2d, #d9a067);
-      color: #fff;
+      padding: 0;
     }
-
     header {
+      background-color: #ffb6b9;
+      padding: 2rem;
       text-align: center;
-      padding: 3rem 1rem;
     }
-
-    header img {
-      width: 150px;
-      border-radius: 100%;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    header h1 {
+      margin: 0;
+      color: #6a0572;
     }
-
-    h1, h2 {
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    .section {
+      padding: 2rem;
     }
-
-    section {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .drinks, .croissants, .buy, .about, .party {
-      margin-bottom: 3rem;
-    }
-
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 1.5rem;
-      width: 250px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .card img {
-      width: 100%;
-      border-radius: 10px;
+    .product {
+      background: #ffe0ac;
+      border-radius: 1rem;
+      padding: 1rem;
       margin-bottom: 1rem;
     }
-
-    .cta-button {
+    .product h3 {
+      margin: 0 0 0.5rem 0;
+    }
+    .button {
       display: inline-block;
-      margin-top: 1rem;
-      background: white;
-      color: #333;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+      padding: 0.7rem 1.2rem;
+      background-color: #6a0572;
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
+      border-radius: 8px;
+      margin-top: 1rem;
     }
-
-    .cta-button:hover {
-      background: #ffddaa;
-      color: #000;
-    }
-
     footer {
       text-align: center;
-      padding: 2rem 1rem;
-      background: rgba(0, 0, 0, 0.2);
+      background: #ffb6b9;
+      padding: 1rem;
       font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .cards {
-        flex-direction: column;
-        align-items: center;
-      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="IMG_20250601_183510.jpg" alt="Coffee Cup" />
-    <h1>High quality in every cup we serve...</h1>
-  </header>
-
-  <section class="drinks">
-    <h2>☕ Drinks</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://i.imgur.com/T5G7O0y.jpg" alt="Cappuccino">
-        <h3>Cappuccino</h3>
-        <p>$4.20</p>
-        <a href="https://wa.me/6281234567890" class="cta-button">Get Delivery</a>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/5zOzWTs.jpg" alt="Cafe Latte">
-        <h3>Cafe Latte</h3>
-        <p>$3.15</p>
-        <a href="https://wa.me/6281234567890" class="cta-button">Get Delivery</a>
-      </div>
-      <div class="card">
-        <img src="https://i.imgur.com/DMPH0rR.jpg" alt="Dark Coffee">
-        <h3>Dark Coffee</h3>
-        <p>$2.75</p>
-        <a href="https://wa.me/6281234567890" class="cta-button">Get Delivery</a>
-      </div>
+    <h1>Donut Suka Suka</h1>
+    <p>Donat lucu, enak, dan bikin jatuh cinta 🍩✨</p>
+  </header>  <section class="section">
+    <h2>Katalog Donat</h2>
+    <div class="product">
+      <h3>Taro Keju</h3>
+      <p>Harga: Rp10.000</p>
     </div>
-  </section>
-
-  <section class="croissants">
-    <h2>🥐 Croissants</h2>
-    <p>Flaky, buttery, and dangerously delicious — From $2.90</p>
-    <img src="https://i.imgur.com/ctehukN.jpg" alt="Croissant" style="width: 200px; border-radius: 10px; display: block; margin: 1rem auto;">
-  </section>
-
-  <section class="buy">
-    <h2>🛍️ Buy for Home</h2>
-    <p>From $9.90 — Bring home the taste of beansville</p>
-    <img src="https://i.imgur.com/6uZckZP.png" alt="Coffee Bag" style="width: 250px; border-radius: 10px; display: block; margin: 1rem auto;">
-  </section>
-
-  <section class="about">
-    <h2>👋 About Us</h2>
-    <p>We offer a unique coffee house environment unlike any other in N.Y.<br><br>
-    Cozy corners. Signature blends. A place where your story and our beans meet.</p>
-  </section>
-
-  <section class="party">
-    <h2>🎉 Barista Party</h2>
-    <p>Every Friday & Saturday | Special moments, coffee splash, and good vibes only ☕🎶✨</p>
-  </section>
-
-  <footer>
-    <p>📍 Location: 123 Coffee Street, Beansville, NY</p>
-    <p>&copy; 2025 KopiKita. All rights reserved.</p>
+    <div class="product">
+      <h3>Coklat Keju</h3>
+      <p>Harga: Rp10.000</p>
+    </div>
+    <div class="product">
+      <h3>Tiramisu</h3>
+      <p>Harga: Rp10.000</p>
+    </div>
+    <div class="product">
+      <h3>Cappuccino</h3>
+      <p>Harga: Rp10.000</p>
+    </div>
+    <a
+      href="https://wa.me/6287860147419?text=Halo%20Donut%20Suka%20Suka%2C%20aku%20mau%20pesan%20donatnya%20dong!"
+      class="button"
+      target="_blank"
+    >Pesan via WhatsApp</a>
+  </section>  <section class="section">
+    <h2>Lokasi</h2>
+    <p>Kami berada di Kediri, Jawa Timur 🍩📍</p>
+    <iframe
+      src="https://www.google.com/maps/embed/v1/place?q=Kediri&key=YOUR_GOOGLE_MAPS_API_KEY"
+      width="100%" height="300" frameborder="0" style="border:0" allowfullscreen>
+    </iframe>
+  </section>  <section class="section">
+    <h2>Kontak</h2>
+    <p>Instagram: <a href="https://instagram.com/DonutSuka_2" target="_blank">@DonutSuka_2</a></p>
+    <p>WhatsApp: <a href="https://wa.me/6287860147419" target="_blank">0878-6014-7419</a></p>
+  </section>  <footer>
+    &copy; 2025 Donut Suka Suka. Manisnya gak cuma di toppingnya 🍩
   </footer>
 </body>
 </html>
