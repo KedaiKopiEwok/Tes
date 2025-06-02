@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Produk Toko Anda</title>
+    <title>Toko Kue Manisku - Katalog Produk</title>
     <style>
         :root {
             --pink: #ffb6c1;
@@ -36,16 +36,56 @@
             margin: 0;
         }
         
+        nav {
+            background-color: var(--mint);
+            padding: 10px;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 15px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: var(--peach);
+        }
+        
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 0 20px;
         }
         
+        .section-title {
+            color: #ff6b88;
+            border-bottom: 2px dashed var(--pink);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
         
         .product-card {
@@ -92,6 +132,31 @@
             margin: 10px 0;
         }
         
+        .btn {
+            display: inline-block;
+            background-color: var(--pink);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #ff8fa3;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
         /* Modal Styling */
         .modal {
             display: none;
@@ -135,10 +200,62 @@
             border-radius: 15px;
         }
         
+        .about-section, .contact-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .map-container {
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .category-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .category-btn {
+            background-color: var(--mint);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .category-btn:hover, .category-btn.active {
+            background-color: var(--pink);
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--pink);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
         @media (max-width: 768px) {
             .modal-content {
                 width: 90%;
                 margin: 10% auto;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 5px 0;
             }
         }
     </style>
@@ -149,78 +266,145 @@
         <p class="subtitle">Kue Segar Setiap Hari</p>
     </header>
     
+    <nav>
+        <ul>
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#products">Produk</a></li>
+            <li><a href="#categories">Kategori</a></li>
+            <li><a href="#about">Tentang Kami</a></li>
+            <li><a href="#contact">Kontak</a></li>
+        </ul>
+    </nav>
+    
     <div class="container">
-        <section class="product-grid">
-            <!-- Produk 1 -->
-            <div class="product-card" onclick="showProductModal(this)">
-                <div class="product-image">
-                    <img src="20250602_131242_0000.png" alt="Cupcake Rainbow">
+        <section id="home">
+            <h2 class="section-title">Selamat Datang di Toko Kue Manisku</h2>
+            <p>Toko kue kami menyediakan berbagai macam kue lezat dan segar setiap hari. Pesan sekarang juga!</p>
+        </section>
+        
+        <section id="products">
+            <h2 class="section-title">Produk Kami</h2>
+            
+            <div class="product-grid">
+                <!-- Produk 1 -->
+                <div class="product-card" onclick="showProductModal(this)">
+                    <div class="product-image">
+                        <img src="Foto Produk Kamu_20250603_013326_0000.png" alt="Cupcake Rainbow">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Cupcake Rainbow</h3>
+                        <p class="product-description">Cupcake warna-warni dengan buttercream lembut</p>
+                        <div class="product-price">Rp 45.000</div>
+                        <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Cupcake%20Rainbow" class="btn btn-whatsapp">Pesan via WhatsApp</a>
+                    </div>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-title">Cupcake Rainbow</h3>
-                    <p class="product-description">Cupcake warna-warni dengan buttercream lembut</p>
-                    <div class="product-price">Rp 45.000</div>
+                
+                <!-- Produk 2 -->
+                <div class="product-card" onclick="showProductModal(this)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1603532648955-039310d784ed?w=400" alt="Kue Lapis Legit">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kue Lapis Legit</h3>
+                        <p class="product-description">Kue lapis legit tradisional 18 lapisan</p>
+                        <div class="product-price">Rp 120.000</div>
+                        <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Kue%20Lapis%20Legit" class="btn btn-whatsapp">Pesan via WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 3 -->
+                <div class="product-card" onclick="showProductModal(this)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Donat Glaze">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Donat Glaze</h3>
+                        <p class="product-description">Donat lembut dengan glaze gula warna-warni</p>
+                        <div class="product-price">Rp 25.000</div>
+                        <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Donat%20Glaze" class="btn btn-whatsapp">Pesan via WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 4 -->
+                <div class="product-card" onclick="showProductModal(this)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=400" alt="Red Velvet Cake">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Red Velvet Cake</h3>
+                        <p class="product-description">Kue red velvet dengan cream cheese frosting</p>
+                        <div class="product-price">Rp 150.000</div>
+                        <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Red%20Velvet%20Cake" class="btn btn-whatsapp">Pesan via WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 5 -->
+                <div class="product-card" onclick="showProductModal(this)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=400" alt="Macarons">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Macarons</h3>
+                        <p class="product-description">Macarons berbagai rasa dengan isian lembut</p>
+                        <div class="product-price">Rp 75.000</div>
+                        <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Macarons" class="btn btn-whatsapp">Pesan via WhatsApp</a>
+                    </div>
+                </div>
+                
+                <!-- Produk 6 -->
+                <div class="product-card" onclick="showProductModal(this)">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Chocolate Cake">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Chocolate Cake</h3>
+                        <p class="product-description">Kue cokelat lezat dengan ganache topping</p>
+                        <div class="product-price">Rp 180.000</div>
+                        <a href="https://wa.me/6281234567890?text=Saya%20mau%20pesan%20Chocolate%20Cake" class="btn btn-whatsapp">Pesan via WhatsApp</a>
+                    </div>
                 </div>
             </div>
+        </section>
+        
+        <section id="categories">
+            <h2 class="section-title">Kategori Menu</h2>
             
-            <!-- Produk 2 -->
-            <div class="product-card" onclick="showProductModal(this)">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1603532648955-039310d784ed?w=400" alt="Kue Lapis Legit">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Kue Lapis Legit</h3>
-                    <p class="product-description">Kue lapis legit tradisional 18 lapisan</p>
-                    <div class="product-price">Rp 120.000</div>
-                </div>
+            <div class="category-buttons">
+                <button class="category-btn active" onclick="filterProducts('all')">Semua</button>
+                <button class="category-btn" onclick="filterProducts('cake')">Kue</button>
+                <button class="category-btn" onclick="filterProducts('pastry')">Pastry</button>
+                <button class="category-btn" onclick="filterProducts('traditional')">Tradisional</button>
+                <button class="category-btn" onclick="filterProducts('dessert')">Dessert</button>
             </div>
             
-            <!-- Produk 3 -->
-            <div class="product-card" onclick="showProductModal(this)">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400" alt="Donat Glaze">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Donat Glaze</h3>
-                    <p class="product-description">Donat lembut dengan glaze gula warna-warni</p>
-                    <div class="product-price">Rp 25.000</div>
-                </div>
+            <div class="product-grid">
+                <!-- Produk dengan kategori akan ditampilkan di sini -->
             </div>
+        </section>
+        
+        <section id="about" class="about-section">
+            <h2 class="section-title">Tentang Kami</h2>
+            <p>Toko Kue Manisku didirikan pada tahun 2010 dengan misi menyediakan kue-kue berkualitas tinggi dengan rasa yang lezat dan penyajian yang menarik. Kami menggunakan bahan-bahan terbaik dan selalu menjaga kebersihan dalam setiap proses pembuatan kue.</p>
+            <p>Tim kami terdiri dari ahli pastry berpengalaman yang selalu berinovasi untuk menciptakan produk-produk baru yang spesial untuk pelanggan kami.</p>
+            <p>Visi kami adalah menjadi toko kue terbaik di kota dengan memberikan pengalaman membeli kue yang menyenangkan bagi setiap pelanggan.</p>
+        </section>
+        
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Kontak Kami</h2>
+            <p><strong>Alamat:</strong> Jl. Rasa Manis No. 123, Kota Kue, Indonesia</p>
+            <p><strong>Telepon:</strong> 0812-3456-7890</p>
+            <p><strong>Email:</strong> info@tokokuenanisku.com</p>
+            <p><strong>Jam Operasional:</strong> Setiap hari 08.00 - 20.00 WIB</p>
             
-            <!-- Produk 4 -->
-            <div class="product-card" onclick="showProductModal(this)">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=400" alt="Red Velvet Cake">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Red Velvet Cake</h3>
-                    <p class="product-description">Kue red velvet dengan cream cheese frosting</p>
-                    <div class="product-price">Rp 150.000</div>
-                </div>
-            </div>
-            
-            <!-- Produk 5 -->
-            <div class="product-card" onclick="showProductModal(this)">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=400" alt="Macarons">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Macarons</h3>
-                    <p class="product-description">Macarons berbagai rasa dengan isian lembut</p>
-                    <div class="product-price">Rp 75.000</div>
-                </div>
-            </div>
-            
-            <!-- Produk 6 -->
-            <div class="product-card" onclick="showProductModal(this)">
-                <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Chocolate Cake">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Chocolate Cake</h3>
-                    <p class="product-description">Kue cokelat lezat dengan ganache topping</p>
-                    <div class="product-price">Rp 180.000</div>
-                </div>
+            <h3>Lokasi Kami</h3>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.923935728936!2d107.6101573152949!3d-6.902895169770773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e639b1c4b0c1%3A0x3b4f4e1c1c1c1c1c!2sJl.%20Rasa%20Manis%20No.123%2C%20Kota%20Kue!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                </iframe>
             </div>
         </section>
     </div>
@@ -238,10 +422,7 @@
             <div class="product-info">
                 <div class="product-price" id="modalPrice">Rp 0</div>
                 <p id="modalDescription">Deskripsi produk akan muncul di sini.</p>
-                <button onclick="window.location.href='https://wa.me/6281234567890?text=Saya%20mau%20pesan%20' + encodeURIComponent(document.getElementById('modalTitle').textContent)" 
-                        style="background-color: #25D366; color: white; border: none; padding: 10px 20px; border-radius: 15px; margin-top: 15px; cursor: pointer;">
-                    Pesan via WhatsApp
-                </button>
+                <a id="modalWhatsapp" href="#" class="btn btn-whatsapp">Pesan via WhatsApp</a>
             </div>
         </div>
     </div>
@@ -258,12 +439,14 @@
             const price = productCard.querySelector('.product-price').textContent;
             const description = productCard.querySelector('.product-description').textContent;
             const imageSrc = productCard.querySelector('.product-image img').src;
+            const whatsappLink = productCard.querySelector('.btn-whatsapp').href;
             
             document.getElementById('modalTitle').textContent = title;
             document.getElementById('modalPrice').textContent = price;
             document.getElementById('modalDescription').textContent = description;
             document.getElementById('modalImage').src = imageSrc;
             document.getElementById('modalImage').alt = title;
+            document.getElementById('modalWhatsapp').href = whatsappLink;
             document.getElementById('productModal').style.display = 'block';
         }
         
@@ -278,6 +461,21 @@
             if (event.target === modal) {
                 closeModal();
             }
+        }
+        
+        // Fungsi untuk filter produk berdasarkan kategori
+        function filterProducts(category) {
+            // Hapus class active dari semua tombol kategori
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Tambahkan class active ke tombol yang diklik
+            event.target.classList.add('active');
+            
+            // Logika filter akan ditambahkan di sini
+            console.log('Memfilter produk dengan kategori:', category);
+            // Implementasi aktual akan memerlukan data kategori pada setiap produk
         }
     </script>
 </body>
