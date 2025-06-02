@@ -1,166 +1,271 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Donut Suka Suka 🍩</title>
-  <meta name="description" content="Donat enak dan lucu di Kediri. Varian rasa unik seperti Taro Keju, Coklat Keju, Tiramisu dan lainnya. Order via WhatsApp sekarang!" />
-  <meta name="keywords" content="Donat Kediri, Donut Suka Suka, Donat enak, Taro Keju, Donat lucu" />
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet" />
-  <link rel="icon" href="https://emoji.gg/assets/emoji/4996-donut.png" type="image/x-icon" />
-  <style>
-    body {
-      font-family: 'Fredoka', sans-serif;
-      background: linear-gradient(to bottom right, #fff0f5, #ffe4ec);
-      margin: 0;
-      padding: 20px;
-      color: #4d2c2c;
-    }
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #ffffffcc;
-      padding: 25px;
-      border-radius: 25px;
-      box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
-      backdrop-filter: blur(5px);
-    }
-    h1, h2, h3 {
-      color: #d14d72;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.8em;
-      margin-bottom: 5px;
-    }
-    p.center {
-      text-align: center;
-    }
-    .section {
-      margin-top: 40px;
-    }
-    .donut-item {
-      background: #fff3f8;
-      padding: 12px 18px;
-      border-radius: 15px;
-      margin-bottom: 20px;
-      border-left: 5px solid #ffb3c6;
-      transition: transform 0.2s;
-    }
-    .donut-item:hover {
-      transform: scale(1.02);
-    }
-    .donut-img {
-      width: 100%;
-      border-radius: 15px;
-      margin-bottom: 10px;
-    }
-    .btn {
-      display: block;
-      width: fit-content;
-      margin: 20px auto;
-      padding: 12px 25px;
-      background-color: #ff8ab8;
-      color: white;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s ease;
-      box-shadow: 0 4px 8px rgba(255, 138, 184, 0.4);
-    }
-    .btn:hover {
-      background-color: #e96a9e;
-    }
-    a {
-      color: #d14d72;
-      text-decoration: none;
-    }
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 0.9em;
-      color: #888;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donut Manisku - Toko Donut Lucu untuk Anak</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #FFF5E6;
+            margin: 0;
+            padding: 0;
+            color: #5E2A00;
+        }
+        
+        /* Header */
+        header {
+            background-color: #FF9AA2;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px dotted #FFB7B2;
+        }
+        
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 0 #FFDAC1;
+            font-size: 2.5em;
+            margin: 0;
+        }
+        
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: -20px;
+        }
+        
+        /* Navigasi */
+        nav {
+            background-color: #FFDAC1;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        nav a {
+            color: #5E2A00;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        nav a:hover {
+            color: #FF9AA2;
+            text-decoration: underline wavy;
+        }
+        
+        /* Konten Utama */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: #E2F0CB;
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px dashed #B5EAD7;
+        }
+        
+        /* Produk */
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .product {
+            background-color: white;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 2px solid #FFB7B2;
+        }
+        
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #FFDAC1;
+        }
+        
+        .product h3 {
+            color: #FF9AA2;
+            margin-top: 10px;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #5E2A00;
+            font-size: 1.2em;
+        }
+        
+        .order-btn {
+            background-color: #FF9AA2;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .order-btn:hover {
+            background-color: #FF7B8B;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #FF9AA2;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .social-icons {
+            margin: 15px 0;
+        }
+        
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5em;
+        }
+        
+        /* Animasi */
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .bounce {
+            animation: bounce 2s infinite;
+        }
+        
+        /* Responsif */
+        @media (max-width: 768px) {
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🍩 Donut Suka Suka</h1>
-    <p class="center">Donat lucu, enak, dan bikin jatuh cinta ✨</p>
-
-    <!-- Tentang Kami -->
-    <div class="section">
-      <h2>Tentang Kami</h2>
-      <p>Kami adalah UMKM dari Kediri yang percaya bahwa setiap gigitan donat harus membawa senyum. Dibuat homemade dengan cinta dan topping pilihan, Donut Suka Suka hadir buat nemenin harimu lebih manis!</p>
+    <header>
+        <img src="https://i.imgur.com/JnQJXzP.png" alt="Logo Donut Manisku" class="logo bounce">
+        <h1>Donut Manisku</h1>
+        <p>Tempatnya Donut Lucu dan Lezat untuk Si Kecil!</p>
+    </header>
+    
+    <nav>
+        <a href="#home">Beranda</a>
+        <a href="#products">Produk</a>
+        <a href="#about">Tentang Kami</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+    
+    <div class="container" id="home">
+        <div class="intro">
+            <h2>Selamat Datang di Donut Manisku! 🍩</h2>
+            <p>Donut kami dibuat dengan cinta dan bahan-bahan terbaik. Setiap gigitan akan membawa kebahagiaan untuk anak-anak Anda!</p>
+            <p>💖 Bebas Pengawet 💖 Warna Alami 💖 Variasi Lucu 💖</p>
+        </div>
+        
+        <h2 id="products" style="text-align: center; color: #FF9AA2;">Katalog Donut Kami</h2>
+        
+        <div class="products">
+            <!-- Produk 1 -->
+            <div class="product">
+                <img src="https://i.imgur.com/YQZqX9t.jpg" alt="Donut Pelangi">
+                <h3>Donut Pelangi</h3>
+                <p>Donut warna-warni dengan taburan pernik-pernik manis.</p>
+                <div class="price">Rp 15.000</div>
+                <button class="order-btn">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Produk 2 -->
+            <div class="product">
+                <img src="https://i.imgur.com/vVXHZFL.jpg" alt="Donut Karakter">
+                <h3>Donut Karakter</h3>
+                <p>Donut dengan bentuk karakter kartun favorit anak-anak.</p>
+                <div class="price">Rp 20.000</div>
+                <button class="order-btn">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Produk 3 -->
+            <div class="product">
+                <img src="https://i.imgur.com/JnQJXzP.png" alt="Donut Coklat">
+                <h3>Donut Coklat</h3>
+                <p>Donut dengan topping coklat leleh dan taburan meses warna-warni.</p>
+                <div class="price">Rp 12.000</div>
+                <button class="order-btn">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Produk 4 -->
+            <div class="product">
+                <img src="https://i.imgur.com/7JQYX3a.jpg" alt="Donut Strawberry">
+                <h3>Donut Strawberry</h3>
+                <p>Donut dengan glaze strawberry dan hiasan berbentuk hati.</p>
+                <div class="price">Rp 12.000</div>
+                <button class="order-btn">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Produk 5 -->
+            <div class="product">
+                <img src="https://i.imgur.com/9ZQYX3a.jpg" alt="Donut Unicorn">
+                <h3>Donut Unicorn</h3>
+                <p>Donut ajaib dengan warna pastel dan tanduk unicorn yang bisa dimakan.</p>
+                <div class="price">Rp 25.000</div>
+                <button class="order-btn">Pesan Sekarang</button>
+            </div>
+            
+            <!-- Produk 6 -->
+            <div class="product">
+                <img src="https://i.imgur.com/8ZQYX3a.jpg" alt="Donut Mini Pack">
+                <h3>Paket Donut Mini</h3>
+                <p>Paket berisi 12 donut mini dengan berbagai rasa dan bentuk.</p>
+                <div class="price">Rp 50.000</div>
+                <button class="order-btn">Pesan Sekarang</button>
+            </div>
+        </div>
+        
+        <div id="about" style="margin-top: 50px; background-color: #B5EAD7; padding: 20px; border-radius: 15px;">
+            <h2 style="text-align: center; color: #5E2A00;">Tentang Donut Manisku</h2>
+            <p>Donut Manisku adalah usaha kecil yang didirikan oleh Ibu Siti pada tahun 2020 dengan tujuan membuat donut yang sehat dan menarik untuk anak-anak. Kami menggunakan bahan-bahan alami dan mengurangi gula tanpa mengurangi kelezatannya.</p>
+            <p>Setiap donut kami buat dengan penuh cinta dan kreativitas untuk membuat anak-anak tersenyum!</p>
+        </div>
     </div>
-
-    <!-- Menu Donat -->
-    <div class="section">
-      <h2>Katalog Donat</h2>
-
-      <div class="donut-item">
-        <img class="donut-img" src="20250602_131242_0000.png" alt="Taro Keju" />
-        <h3>Taro Keju 🍠🧀</h3>
-        <p>Harga: Rp10.000</p>
-      </div>
-
-      <div class="donut-item">
-        <img class="donut-img" src="20250602_131607_0000.png" alt="Coklat Keju" />
-        <h3>Coklat Keju 🍫🧀</h3>
-        <p>Harga: Rp10.000</p>
-      </div>
-
-      <div class="donut-item">
-        <img class="donut-img" src="20250602_131701_0000.png" alt="Tiramisu" />
-        <h3>Tiramisu ☕🍰</h3>
-        <p>Harga: Rp10.000</p>
-      </div>
-
-      <div class="donut-item">
-        <img class="donut-img" src="20250602_131934_0000.png" alt="Cappuccino" />
-        <h3>Cappuccino ☕💕</h3>
-        <p>Harga: Rp10.000</p>
-      </div>
-    </div>
-
-    <!-- Paket Promo -->
-    <div class="section">
-      <h2>Paket & Promo</h2>
-      <p>🎉 Paket 6 donat campur hanya Rp55.000 – hemat & puas!</p>
-      <p>🎁 Promo Hari Spesial: Beli 3 donat, gratis 1!</p>
-    </div>
-
-    <!-- Cara Order -->
-    <div class="section">
-      <h2>Cara Pemesanan</h2>
-      <ol>
-        <li>Klik tombol WhatsApp di bawah.</li>
-        <li>Ketik jumlah & varian donat yang mau kamu pesan.</li>
-        <li>Kami akan konfirmasi dan siap antar/pick up!</li>
-      </ol>
-      <a class="btn" href="https://wa.me/6287860147419?text=Halo%20Donut%20Suka%20Suka%2C%20aku%20mau%20pesan%20donatnya%20dong!" target="_blank">
-        🍩 Pesan via WhatsApp
-      </a>
-    </div>
-
-    <!-- Testimoni -->
-    <div class="section">
-      <h2>Testimoni Pelanggan</h2>
-      <p>“Donatnya kayak mantan... manis, empuk, dan bikin kangen.” – Nana, Kediri 💬</p>
-      <p>“Gigit sekali, langsung inget masa kecil.” – Dika, Pare 🎉</p>
-    </div>
-
-    <!-- Lokasi & Kontak -->
-    <div class="section">
-      <h2>Lokasi</h2>
-      <p>Kami berada di <strong>Kediri, Jawa Timur</strong> 📍</p>
-
-      <h2>Kontak</h2>
-      <p>Instagram: <a href="https://instagram.com/DonutSuka_2" target="_blank">@DonutSuka_2</a></p>
-      <p>WhatsApp: <a href="https://wa.me/6287860147419" target="_blank">0878-6014-7419</a></p>
-    </div>
-
-    <footer>© 2025 Donut Suka Suka. Manisnya gak cuma di toppingnya 🍩💖</footer>
-  </div>
+    
+    <footer id="contact">
+        <h3>Hubungi Kami</h3>
+        <p>📞 0812-3456-7890</p>
+        <p>📧 hello@donutmanisku.com</p>
+        <p>📍 Jl. Manis No. 123, Kota Bahagia</p>
+        
+        <div class="social-icons">
+            <a href="#">📱</a>
+            <a href="#">📷</a>
+            <a href="#">💌</a>
+            <a href="#">🛒</a>
+        </div>
+        
+        <p>&copy; 2023 Donut Manisku. Semua Hak Dilindungi.</p>
+    </footer>
 </body>
 </html>
