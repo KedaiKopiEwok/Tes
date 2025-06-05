@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko UMKM kamu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Chewy&family=Fredoka:wght@500;600&family=Poppins:wght@400;500;600&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Selamat Ulang Tahun, Sindyyy Imooeett! 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Reset CSS */
+        :root {
+            --pink-light: #ffd6e0;
+            --pink-medium: #ff9bb3;
+            --pink-dark: #ff6b8b;
+            --pink-pastel: #ffb6c1;
+            --text-color: #5a3d3d;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -18,628 +22,454 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #FFEBD4;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--pink-light);
+            color: var(--text-color);
+            overflow-x: hidden;
+            position: relative;
         }
         
-        /* Header Styles */
+        .floating-heart {
+            position: absolute;
+            color: var(--pink-medium);
+            font-size: 20px;
+            animation: float 5s infinite ease-in-out;
+            opacity: 0.7;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
         header {
-            background-color: #F7B5CA;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .logo {
-            font-family: 'Chewy', cursive;
-            font-size: 1.8rem;
-            color: #fff;
-            text-shadow: 2px 2px 0 #F0A8D0;
-            white-space: nowrap;
-        }
-        
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-        
-        nav ul li a {
-            font-family: 'Poppins', sans-serif;
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-            white-space: nowrap;
-        }
-        
-        nav ul li a:hover {
-            color: #FFEBD4;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background-color: #FFC6C6;
-            padding: 3rem 1.5rem;
             text-align: center;
+            padding: 30px 0;
+            position: relative;
         }
         
-        .hero h1 {
-            font-family: 'Baloo 2', cursive;
-            font-size: 2.5rem;
-            color: #fff;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 0 #F0A8D0;
-            line-height: 1.2;
-        }
-        
-        .hero p {
-            font-family: 'Quicksand', sans-serif;
-            font-size: 1.1rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Products Section */
-        .products {
-            padding: 3rem 1.5rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .products h2 {
-            font-family: 'Baloo 2', cursive;
-            font-size: 2rem;
-            color: #F0A8D0;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .product-card {
-            background-color: #fff;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .product-image {
-            height: 250px;
-            background-color: #FFEBD4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .product-card:hover .product-image img {
-            transform: scale(1.1);
-        }
-        
-        .product-info {
-            padding: 1.5rem;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .product-name {
-            font-family: 'Chewy', cursive;
-            font-size: 1.5rem;
-            color: #F0A8D0;
-            margin-bottom: 0.8rem;
-            line-height: 1.2;
-        }
-        
-        .product-price {
-            font-family: 'Fredoka', sans-serif;
-            font-size: 1.3rem;
-            color: #F7B5CA;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .product-description {
-            font-family: 'Quicksand', sans-serif;
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 1.2rem;
-            line-height: 1.6;
-            flex: 1;
-        }
-        
-        /* Location Section */
-        .location {
-            padding: 3rem 1.5rem;
-            background-color: #FFEBD4;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .location h2 {
-            font-family: 'Baloo 2', cursive;
-            font-size: 2rem;
-            color: #F0A8D0;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .map-container {
-            height: 450px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .location-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-        
-        .info-card {
+        .header-content {
             background-color: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            flex: 1;
-            min-width: 300px;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(255, 105, 140, 0.2);
+            position: relative;
+            overflow: hidden;
         }
         
-        .info-card h3 {
-            font-family: 'Baloo 2', cursive;
-            color: #F7B5CA;
-            margin-bottom: 1.5rem;
+        .header-content::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 100px;
+            height: 100px;
+            background-color: var(--pink-pastel);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        .header-content::after {
+            content: "";
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 80px;
+            height: 80px;
+            background-color: var(--pink-pastel);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--pink-dark);
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nickname {
+            font-size: 1.8rem;
+            color: var(--pink-dark);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .main-message {
             font-size: 1.5rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
         }
         
-        .info-card p {
-            font-family: 'Quicksand', sans-serif;
-            color: #666;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
+        .cake {
+            font-size: 3rem;
+            animation: bounce 2s infinite;
+            display: inline-block;
         }
         
-        /* Footer Styles */
-        footer {
-            background-color: #F0A8D0;
-            color: #fff;
-            padding: 3rem 1.5rem;
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(255, 105, 140, 0.2);
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            color: var(--pink-dark);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             text-align: center;
         }
         
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-logo {
-            font-family: 'Chewy', cursive;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 0 #F7B5CA;
-        }
-        
-        .contact-info {
-            margin-bottom: 2rem;
-        }
-        
-        .contact-info p {
-            font-family: 'Quicksand', sans-serif;
-            margin-bottom: 1rem;
+        .love-letter {
+            line-height: 1.8;
             font-size: 1.1rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.8rem;
         }
         
-        .social-links {
-            margin-bottom: 2rem;
+        .love-letter p {
+            margin-bottom: 15px;
         }
         
-        .social-links a {
-            display: inline-block;
-            margin: 0 15px;
-            color: #fff;
-            font-size: 1.8rem;
-            transition: transform 0.3s;
+        .story {
+            line-height: 1.8;
+            font-size: 1.1rem;
         }
         
-        .social-links a:hover {
-            transform: translateY(-8px);
+        .story p {
+            margin-bottom: 15px;
         }
         
-        .whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.8rem;
-            background-color: #25D366;
+        .story-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--pink-dark);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .music-box {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--pink-pastel);
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .music-title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .lyrics {
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .btn-miss {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 30px;
+            background-color: var(--pink-dark);
             color: white;
-            padding: 1rem 2rem;
+            border: none;
             border-radius: 50px;
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-            transition: background-color 0.3s, transform 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 105, 140, 0.4);
         }
         
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        .btn-miss:hover {
+            background-color: var(--pink-medium);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 105, 140, 0.6);
         }
         
-        .copyright {
-            font-family: 'Quicksand', sans-serif;
-            margin-top: 2.5rem;
-            font-size: 1rem;
+        .random-message {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 0.5s ease;
         }
         
-        /* Responsive Styles */
-        @media (max-width: 1024px) {
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            }
-            
-            .product-image {
-                height: 220px;
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-color);
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
-            .header-container {
-                flex-wrap: wrap;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            .menu-toggle {
-                display: block;
-                order: 1;
+            .nickname {
+                font-size: 1.4rem;
             }
             
-            .logo {
-                order: 0;
-                margin-right: auto;
-                margin-bottom: 0;
+            .main-message {
+                font-size: 1.2rem;
             }
             
-            nav {
-                width: 100%;
-                order: 2;
-                margin-top: 1rem;
-                display: none;
+            .section-title {
+                font-size: 1.8rem;
             }
             
-            nav.active {
-                display: block;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            nav ul li {
-                margin: 0.8rem 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
+            .love-letter, .story {
                 font-size: 1rem;
-            }
-            
-            .products, .location {
-                padding: 2.5rem 1.5rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 1.5rem;
-            }
-            
-            .product-image {
-                height: 200px;
-            }
-            
-            .map-container {
-                height: 350px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header-container {
-                padding: 1rem;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .hero {
-                padding: 2rem 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 0.95rem;
-            }
-            
-            .products h2, .location h2 {
-                font-size: 1.8rem;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .product-card {
-                max-width: 100%;
-            }
-            
-            .product-image {
-                height: 220px;
-            }
-            
-            .map-container {
-                height: 250px;
-            }
-            
-            .info-card {
-                min-width: 100%;
-                padding: 1.5rem;
-            }
-            
-            .footer-logo {
-                font-size: 1.8rem;
-            }
-            
-            .whatsapp-btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-            
-            .social-links a {
-                font-size: 1.5rem;
-                margin: 0 10px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="header-container">
-            <div class="logo">Nama_Toko_Kamu</div>
-            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-            <nav id="main-nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#products">Produk</a></li>
-                    <li><a href="#location">Lokasi</a></li>
-                    <li><a href="#contact">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Floating hearts -->
+    <div id="hearts-container"></div>
     
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Donat Lezat untuk Setiap Momen Bahagia</h1>
-        <p>Temukan berbagai varian donat kami yang dibuat dengan bahan premium dan penuh cinta. Setiap gigitan akan membawa kebahagiaan!</p>
-    </section>
-    
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <h2>Katalog Produk Kami</h2>
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Foto Produk Kamu_20250603_013326_0000.png" alt="Donat Cokelat Meleleh">
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Selamat Ulang Tahun</h1>
+                <div class="nickname">Sindyyy Imooeett! 💖</div>
+                <div class="main-message">
+                    Selamat ulang tahun ke-18, ayang Sindyyy yang paling imut sejagat raya! <span class="cake">🎂</span> <span class="cake">💖</span> <span class="cake">🎉</span>
                 </div>
-                <div class="product-info">
-                    <h3 class="product-name">Nama produk kamu</h3>
-                    <p class="product-price">Harga produk kamu</p>
-                    <p class="product-description">deskripsi produk kamu. </p>
+                <div class="animation-placeholder">
+                    [Animasi manis akan menyusul]
                 </div>
             </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Foto Produk Kamu_20250603_013326_0000.png" alt="Donat Cokelat Meleleh">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Nama produk kamu</h3>
-                    <p class="product-price">Harga produk kamu</p>
-                    <p class="product-description">deskripsi produk kamu. </p>
+        </header>
+        
+        <section class="section">
+            <h2 class="section-title">💌 Surat Cinta dari Si Gemoyyyy</h2>
+            <div class="love-letter">
+                <p>Haiii kamu,<br>yang hari ini genap 18 tahun jadi gadis paling imut, tapi tetap kayak bocah kecil di hati aku~ 🎀</p>
+                
+                <p>Selamat ulang tahunnn, Sindyyy Imooeett-ku! 🎂<br>
+                Hari ini, bumi nambah satu bunga, dan aku nambah satu alasan buat terus sayang kamu 🥺💘<br>
+                Tau nggak? Kamu tuh kayak boba…<br>
+                nempel di hatiku, susah dilepas, dan selalu bikin nagih. 🧋</p>
+                
+                <p>18 tahun mungkin kata orang artinya dewasa,<br>
+                tapi buatku… itu cuma angka.<br>
+                Soalnya kamu bakal tetap jadi bocil kesayangan Si Gemoyyyy selamanya! 😝💓</p>
+                
+                <p>Aku tahu, kadang kamu drama, kadang kamu ngambek,<br>
+                tapi jujur ya, itu semua bikin aku makin cinta.<br>
+                Karena di balik semua tingkah kamu yang random,<br>
+                ada hati yang hangat, yang bikin Si Gemoyyyy ngerasa jadi cowok paling beruntung di dunia.</p>
+                
+                <p>Kita mungkin nggak selalu sempurna,<br>
+                tapi aku mau kita terus belajar bareng.<br>
+                Belajar sabar, belajar sayang, dan belajar nerima kenyataan…<br>
+                bahwa aku udah nyangkut di kamu dan nggak mau pindah ke mana-mana. 💞</p>
+                
+                <p>Hari ini, semoga semua doa baik jatuh ke kamu.<br>
+                Dan satu doaku:<br>
+                semoga kamu selalu bahagia—bareng Si Gemoyyyy. 😚</p>
+                
+                <p>Selamat ulang tahun, ayangku Sindyyy Imooeett.<br>
+                You're the reason my heart goes:<br>
+                "dug dug dug gemeshhh" setiap hari. 💓💓</p>
+                
+                <p style="text-align: right; font-weight: 600; margin-top: 30px;">
+                    Dari yang paling nempel di hatimu,<br>
+                    Si Gemoyyyy 🧸✨
+                </p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">💖 Cerita Cinta Kita</h2>
+            <div class="story">
+                <div class="story-title">"Roti Manis, Gosong, dan Si Gemoy yang Gagal Bareng Tapi Bahagia"</div>
+                
+                <p>Untuk Sindy Imooeett, si gadis berhijab paling chaotic, lembut di hati, dan penuh drama menggemaskan…</p>
+                
+                <p>Awalnya kupikir itu hari biasa.<br>
+                Pelatihan bikin roti manis, belajar ngulen, tunggu proofing, terus pulang.<br>
+                Tapi... aku malah ketemu kamu — si pemilik celemek belepotan, rambut berantakan (di balik hijab yang tetap on point), dan ekspresi "aku sanggup hadapi hidup… asal rotiku ngembang".</p>
+                
+                <p>Kamu berdiri di depan oven, menatap hasilmu.<br>
+                Pinggirannya gosong, tengahnya belum matang.<br>
+                Kamu melihatku, lalu berbisik pelan:<br>
+                "Gemoy... rotiku gagal... aku kayaknya juga gagal hidup..."</p>
+                
+                <p>Aku nggak bisa jawab. Karena pas itu... rotiku juga gosong.<br>
+                Dua roti bersaudara. Dua hati yang penuh arang. 😔🍞</p>
+                
+                <p>Lalu datanglah sang accessor, berdiri kayak tokoh antagonis sinetron masak.<br>
+                "Roti yang gosong dan tidak matang sempurna bisa memengaruhi kelulusan ujian ini."</p>
+                
+                <p>Sindy langsung freeze.<br>
+                Kamu peluk diri sendiri, napas cepat.<br>
+                Lalu suara lirih keluar:<br>
+                "Aku... nggak lulus...? Karena rotiku...?"</p>
+                
+                <p>Tapi tiba-tiba accessor lanjut:<br>
+                "Tapi karena semangat dan prosesmu luar biasa... kamu tetap LULUS!"</p>
+                
+                <p>Dan Sindy Imooeett pun...<br>
+                Menangis sesenggukan.<br>
+                Beneran nangis beneran.<br>
+                Kayak adegan drama Korea episode 14.</p>
+                
+                <p>Kamu duduk pelan, air mata jatuh sambil lihat roti gosong di tanganmu.<br>
+                Aku duduk di sebelahmu, nyodorin rotiku yang sama-sama gosong, lalu bilang:<br>
+                "Nih… rotiku juga gosong… tapi rasanya manis… karena ada kamu."</p>
+                
+                <p>Kamu pun tambah kenceng nangisnya sambil bilang:<br>
+                "Gemooooyyyy... kamu tuh yaaaa... nyebelin bangetttt... tapi aku sayang kamu 🥲💗"</p>
+                
+                <p>Dan dari hari itulah aku tahu...<br>
+                Sindy Imooeett bukan cuma gadis yang dramanya bisa satu season penuh,<br>
+                tapi juga gadis yang berhasil bikin hatiku ngembang sempurna setiap hari.</p>
+                
+                <p style="text-align: center; font-weight: 600; margin-top: 30px;">
+                    Selamat ulang tahun yaa, Imooeett~<br>
+                    Semoga hidupmu kayak roti: hangat, manis, dan selalu bikin orang di sekitarmu bahagia meski kadang pinggirnya gosong sedikit 💖
+                </p>
+                
+                <p style="text-align: right; font-weight: 600;">
+                    Dari si Gemoy,<br>
+                    Jimmy – chef gagal, tapi pacar dengan hati level Michelin 🌟
+                </p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">🎵 Musik Khusus Ayang Sindyyy</h2>
+            <div class="music-box">
+                <div class="music-title">Lagu: "Sindy Imooeett"</div>
+                <div class="lyrics">
+                    <p>(Verse 1)<br>
+                    Hari itu kita baking roti<br>
+                    Aku ngeliat kamu panik sendiri<br>
+                    Gosong rotimu, gosong juga punyaku<br>
+                    Tapi hatiku... malah mateng naksir kamu~</p>
+                    
+                    <p>(Chorus)<br>
+                    Sindy Imooett~ ulang tahun ke-18<br>
+                    Masih usil, tapi makin bikin nyaman<br>
+                    Nangis bareng roti, ketawa bareng mimpi<br>
+                    Kamu si manis... yang ku sayangi~ 🎂💘</p>
+                    
+                    <p>(Outro)<br>
+                    Kalau dunia gosong kayak ovenmu<br>
+                    Aku tetap gemoy, tetap cinta kamu~<br>
+                    (he he he…)</p>
                 </div>
             </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Foto Produk Kamu_20250603_013326_0000.png" alt="Donat Cokelat Meleleh">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Nama produk kamu</h3>
-                    <p class="product-price">Harga produk kamu</p>
-                    <p class="product-description">deskripsi produk kamu. </p>
-                </div>
+        </section>
+        
+        <button class="btn-miss" id="missBtn">Aku kangen Gemoy</button>
+        <div class="random-message" id="randomMessage"></div>
+        
+        <section class="section">
+            <h2 class="section-title">📸 Galeri Kenangan</h2>
+            <div style="text-align: center; padding: 20px;">
+                [Galeri foto akan menyusul]
             </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Foto Produk Kamu_20250603_013326_0000.png" alt="Donat Cokelat Meleleh">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Nama produk kamu</h3>
-                    <p class="product-price">Harga produk kamu</p>
-                    <p class="product-description">deskripsi produk kamu. </p>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Foto Produk Kamu_20250603_013326_0000.png" alt="Donat Cokelat Meleleh">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Nama produk kamu</h3>
-                    <p class="product-price">Harga produk kamu</p>
-                    <p class="product-description">deskripsi produk kamu. </p>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="Foto Produk Kamu_20250603_013326_0000.png" alt="Donat Cokelat Meleleh">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-name">Nama produk kamu</h3>
-                    <p class="product-price">Harga produk kamu</p>
-                    <p class="product-description">deskripsi produk kamu. </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Location Section -->
-    <section class="location" id="location">
-        <h2>Temukan Toko Kami</h2>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.923073012687!2d107.60891831539376!3d-6.897980769343147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e64a3e9d1b3f%3A0x9e9d6b9b9b9b9b9b!2sDonut%20Suka%20Suka!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <div class="location-info">
-            <div class="info-card">
-                <h3>Lokasi Toko</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Alamat toko kamau</p>
-            </div>
-            <div class="info-card">
-                <h3>Jam Buka</h3>
-                <p><i class="fas fa-clock"></i> Senin - Minggu: 08.00 - 20.00 WIB</p>
-                <p><i class="fas fa-coffee"></i> Weekend buka lebih awal pukul 07.00</p>
-                <p><i class="fas fa-info-circle"></i> Tutup pada hari libur nasional</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer Section -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-logo">Donut Suka Suka</div>
-            
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> Alamat lengkap toko kamu </p>
-                <p><i class="fas fa-clock"></i> jam buka toko kamu</p>
-                <p><i class="fas fa-envelope"></i> email kamu</p>
-                <p><i class="fas fa-phone"></i> Nomor HP kamu</p>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://wa.me/6281234567890" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://instagram.com/donatsukasuka" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://facebook.com/donatsukasuka" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://twitter.com/donatsukasuka" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-            
-            <a href="https://wa.me/6281234567890" class="whatsapp-btn">
-                <i class="fab fa-whatsapp"></i> Hubungi Kami via WhatsApp
-            </a>
-            
-            <p class="copyright">© 2023 Donut Suka Suka. All Rights Reserved.</p>
-        </div>
-    </footer>
+        </section>
+        
+        <footer>
+            <p>Dibuat dengan 💖 oleh Si Gemoyyyy untuk Sindyyy Imooeett</p>
+            <p>© 2023 - Ulang Tahun ke-18 yang spesial</p>
+        </footer>
+    </div>
 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mainNav = document.getElementById('main-nav');
+        // Create floating hearts
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 20;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('floating-heart');
+                heart.innerHTML = '💖';
+                
+                // Random position
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = 5 + Math.random() * 10;
+                
+                heart.style.left = `${posX}vw`;
+                heart.style.top = `${posY}vh`;
+                heart.style.animationDelay = `${delay}s`;
+                heart.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(heart);
+            }
+        }
         
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
+        // Random messages
+        const messages = [
+            "Kalau kamu gosong, aku tetep cinta. 😭💘",
+            "Aku sayang kamu lebih dari roti kesukaanmu! 🍞💖",
+            "Drama kamu itu yang bikin aku makin cinta. 🎭💕",
+            "18 tahun tapi tetep bocil di hatiku. 🧒💓",
+            "Kamu tuh kayak boba, bikin nagih terus. 🧋💞",
+            "Dug dug dug gemeshhh! Itu suara hatiku kalau liat kamu. 💓",
+            "Nggak ada roti yang semanis kamu. 🍞💘",
+            "Aku mau jadi Gemoy kamu selamanya. 🧸✨"
+        ];
+        
+        // Show random message
+        document.getElementById('missBtn').addEventListener('click', function() {
+            const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            const msgElement = document.getElementById('randomMessage');
+            
+            msgElement.textContent = randomMsg;
+            msgElement.style.display = 'block';
+            
+            // Hide after 3 seconds
+            setTimeout(() => {
+                msgElement.style.display = 'none';
+            }, 3000);
         });
         
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                }
-            });
-        });
+        // Initialize
+        window.onload = function() {
+            createHearts();
+        };
     </script>
 </body>
-</html>
+    </html>
